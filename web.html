@@ -25,6 +25,8 @@ Markdown is a text-to-HTML conversion tool for web writers. Markdown allows you 
 
 [Markdown Guide](https://www.markdownguide.org/)
 
+[Markdown Simulator](https://daringfireball.net/projects/markdown/dingus)
+
 Markdown is often used in _static site generator_ platforms like Jekyll or Hugo. The downside to these platforms is that you have to install their software, and then use command line tools to locally build (i.e. convert to HTML) your site before you push it to the web. 
 
 This page is created using a library called [https://strapdownjs.com](strapdown.js). The advantage of Strapdown is that it converts MD to HTML on the fly, so we don't need to do anything in command line. All we have to do is wrap the Markdown text in `<xmp>` tags add a reference to the library on any page we want to convert:
@@ -77,10 +79,15 @@ You can easily add a Bootstrap layout to a Strapdown page. Below is a minimal ex
 
 ### CSS / SCSS
 
+CSS (cascading style sheets) is the canonical way of styling HTML pages. CSS is kind of dumb and tedious, so people make CSS extension languages to help automate styling changes. [Sass](https://sass-lang.com/) claims to be the most mature, stable, and powerful professional grade CSS extension language in the world. 
 
+In order to use it, we'll need to download and edit local copies of the Sass files that render the template you're using. So, I'll go to [the Bootswatch repository](https://github.com/thomaspark/bootswatch/tree/v5/dist), find my template, and download both `_bootswatch.scss` and `_variables.scss`, and save them to the root of my own repository. 
+
+<h2 style="color:blue;text-align:center;">Column 3</h2>
 
 </xmp>
 
 <script src="https://strapdownjs.com/v/0.2/strapdown.js"></script>
 <script src="https://cdn.jsdelivr.net/gh/joedf/strapdown-topbar@latest/assets/strapdown/strapdown-topbar.min.js"></script>
+<link rel="stylesheet" href="custom.css">
 </html>
