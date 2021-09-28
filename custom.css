@@ -1,8 +1,8 @@
-body {
+/*body {
   background-color: lightblue;
-}
+}*/
 
 h3 {
-  color: navy;
-  margin-left: 20px;
+  color: navy; !important
+  margin-left: 40px;
 }
