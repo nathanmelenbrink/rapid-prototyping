@@ -52,7 +52,7 @@ Learn more about Bootstrap on [w3schools](https://www.w3schools.com/bootstrap5/b
 
 Strapdown is designed to work with Bootstrap layouts. This page is rendered using the "journal" theme, but I can choose from many others (see [bootswatch](https://bootswatch.com/) for examples). All I have to do is change the theme in the `<xmp>` tag: `<xmp theme="journal" style="display:none;">`
 
-Sometimes, we'll want to make small changes to a theme (font size, colors, margins, etc.). We can do that using CSS/SCSS (see below). 
+Sometimes, we'll want to make small changes to a theme (font size, colors, margins, etc.). We can do that using CSS (see below). 
 
 You can easily add a Bootstrap layout to a Strapdown page. Below is a minimal example from [w3schools](https://www.w3schools.com/bootstrap5/bootstrap_get_started.php). (Note that inside of the Bootstrap structure, we need to use HTML tags instead of writing MD. This is because the Bootstrap formatting gets applied before Strapdown converts MD to HTML). 
 
@@ -79,11 +79,49 @@ You can easily add a Bootstrap layout to a Strapdown page. Below is a minimal ex
 
 ### CSS / SCSS
 
-CSS (cascading style sheets) is the canonical way of styling HTML pages. CSS is kind of dumb and tedious, so people make CSS extension languages to help automate styling changes. [Sass](https://sass-lang.com/) claims to be the most mature, stable, and powerful professional grade CSS extension language in the world. 
+CSS (cascading style sheets) is the canonical way of styling HTML pages. CSS is kind of dumb and tedious, so people make CSS extension languages to help automate styling changes. [Sass](https://sass-lang.com/) claims to be the most mature, stable, and powerful professional grade CSS extension language in the world. However, working with Sass/SCSS requires a bit of setup and command line work -- for beginners, it's probably best to stick with CSS. 
 
-In order to use it, we'll need to download and edit local copies of the Sass files that render the template you're using. So, I'll go to [the Bootswatch repository](https://github.com/thomaspark/bootswatch/tree/v5/dist), find my template, and download both `_bootswatch.scss` and `_variables.scss`, and save them to the root of my own repository. 
+You can apply CSS styles to a single HTML element, a single HTML page, or the entire website directory. The latter is more useful for changing overall styling, but sometimes you want to just edit one element using inline styling, for example to change the color of a header (this requires HTML, not MD):
 
-<h2 style="color:blue;text-align:center;">Column 3</h2>
+`<h3 style="color:blue;text-align:center;">Column 3</h3>`
+
+renders as: 
+
+<h3 style="color:blue;text-align:center;">Column 3</h3>
+
+In order to make changes that apply to the entire website directory, we should make a new file in the root of the directory. I'll call mine `custom.css`. 
+
+In this new file, I can start to make changes that will be applied globally (to my whole website). Note that in order to implement these styles, I will need to link to my stylesheet by pasting the following line of code after the strapdown script reference: 
+
+`<link rel="stylesheet" href="custom.css">`
+
+Now, if I edit the contents of my `custom.css` file to do something like apply a lightblue background to the entire website (all other elements are "children" of the `body` element, and therefore receive its styling by default): 
+
+```
+body { 
+  background-color: lightblue; 
+}
+```
+
+Okay great. But what if I want to change the styling of all `<h3>` elements in my website? These elements are written in Markdown, then converted to HTML by Strapdown. Let's add this code to my CSS file: 
+
+```
+h3{ 
+  color: navy;  
+  margin-left: 20px; 
+}
+```
+
+If you refresh your page, you'll notice that the `margin-left` attribute has changed for all of the `<h3>` elements we created in MD using `###`. However, the color has not changed to `navy`. What's up with that? It's because our Bootswatch template is overriding those colors with its own styles. It's styling doesn't include a `margin-left` attribute, so our `20px` is applied. If we want our `navy` color to not be overridden, we can apply an `important!` flag, like this: 
+
+```
+h3{ 
+  color: navy important!;  
+  margin-left: 20px; 
+}
+```
+
+That ought to render like we'd expect. 
 
 </xmp>
 
