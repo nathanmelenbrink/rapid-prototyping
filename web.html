@@ -9,7 +9,7 @@
 	<item><a href="../about.html">About</a></item>
 </topbar>
 
-<!-- This is a comment, it is ignored by the compiler/interpreter -->
+
 ## Resources for Web Development
 
 Link to MIT resources page 
@@ -22,9 +22,15 @@ Markdown is a text-to-HTML conversion tool for web writers. Markdown allows you 
 
 Markdown is often used in _static site generator_ platforms like Jekyll or Hugo. The downside to these platforms is that you have to install their software, and then use command line tools to locally build (i.e. convert to HTML) your site before you push it to the web. 
 
-This page is created using a library called [https://strapdownjs.com](strapdown.js). 
+This page is created using a library called [https://strapdownjs.com](strapdown.js). The advantage of Strapdown is that it converts MD to HTML on the fly, so we don't need to do anything in command line. All we have to do is add a reference to the library on any page we want to convert:
+
+`<script src="https://strapdownjs.com/v/0.2/strapdown.js"> </script>`
 
 ### Bootstrap 
+
+Bootstrap is (apparently) the most popular HTML, CSS, and JavaScript framework for creating responsive, mobile-first websites. Notably, Bootstrap relies on a 12-column grid system for organizing page layouts in a way that looks good on screens of all sizes. 
+
+Bootstrap is not necessary for every site. A page like this one is intended to be used for taking notes -- a single column is fine. On the other hand, sometimes you'll want an attractive and responsive grid layout, especially as a [home/landing page](https://nathanmelenbrink.github.io/howtodesign/) (notice how the page layout changes as you change the browser window size). It's completely reasonable to use Bootstrap for your home page, but stick to a simple single-column layout (i.e., no Bootstrap) for individual project pages.  
 
 
 ### HTML 
@@ -32,6 +38,8 @@ This page is created using a library called [https://strapdownjs.com](strapdown.
 The nice thing about working in Markdown is that it doesn't preclude using HTML elements. I can switch back and forth between MD and HTML as I write my .html file -- the end result will be 100% HTML. 
 
 Some elements aren't handled well by Markdown, like embedding a youtube video using the [iframe](https://www.w3schools.com/tags/tag_iframe.ASP) tag, so we can do things like that with HTML. 
+
+HTML is not difficult to learn, but there's no reason to memorize the elements. Whenever I need to remember the syntax for an HTML element, I just look up the reference on [w3schools](https://www.w3schools.com/html/default.asp) (there are plenty of similar resources as well). 
 
 ### CSS 
 
