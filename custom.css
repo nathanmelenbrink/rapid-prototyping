@@ -1,6 +1,7 @@
-/*body {
-  background-color: lightblue;
-}*/
+body {
+  /*background-color: lightblue;*/
+  padding-top: 0;
+}
 
 /*h3 {
   color: navy !important;
