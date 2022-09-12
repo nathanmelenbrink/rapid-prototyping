@@ -5,6 +5,7 @@
 <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.1/dist/css/bootstrap.min.css" rel="stylesheet">
 
 <div class="navbar navbar-fixed-top" style="z-index: -1;"></div>
+
 <div id="header">
     <iframe src="./header.html"  style="border: none;" width="100%" height="75px;" scrolling="no" ></iframe>
 </div>
@@ -16,15 +17,19 @@
 
 Markdown is a text-to-HTML conversion tool for web writers. Markdown allows you to write using an easy-to-read, easy-to-write plain text format, then convert it to valid HTML.
 
-[Markdown Guide](https://www.markdownguide.org/)
+[Markdown Guide](https://www.markdownguide.org/cheat-sheet/)
 
 [Markdown Simulator](https://daringfireball.net/projects/markdown/dingus)
 
 Markdown is often used in _static site generator_ platforms like Jekyll or Hugo. The downside to these platforms is that you have to install their software, and then use command line tools to locally build (i.e. convert to HTML) your site before you push it to the web. 
 
-This page is created using a library called [Strapdown](strapdown.js). The advantage of Strapdown is that it converts MD to HTML on the fly, so we don't need to do anything in command line. All we have to do is wrap the Markdown text in `<xmp>` tags add a reference to the library on any page we want to convert:
+This page is created using a library called [Strapdown](https://nathanmelenbrink.github.io/lab/js/strapdown.js). The advantage of Strapdown is that it converts MD to HTML on the fly, so we don't need to do anything in command line. All we have to do is wrap the Markdown text in `<xmp>` tags add a reference to the library on any page we want to convert:
 
-`<script src="https://strapdownjs.com/v/0.2/strapdown.js"> </script>`
+`<script src="https://nathanmelenbrink.github.io/lab/js/strapdown.js"> </script>`
+
+_Note:_ The URL where the Strapdown library had been officially hosted is now down, so the link above points to where I've hosted it on my GitHub account. You're welcome to load the library from there, but likely a better approach is to copy it into your local repository, somewhere like `js/strapdown.js`. 
+
+You can find a simple template, without Bootstrap or any other libraries, [here](https://nathanmelenbrink.github.io/lab/website/simple-demo.zip). 
 
 ### HTML 
 
